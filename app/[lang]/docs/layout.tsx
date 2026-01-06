@@ -23,7 +23,6 @@ export default async function Layout({
   return (
     <DocsLayout
       {...base}
-      tabMode="top"
       tree={source.pageTree[lang]}
       links={linkItems.filter((item) => item.type === 'icon')}
       sidebar={{

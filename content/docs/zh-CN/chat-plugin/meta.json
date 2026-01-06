@@ -1,0 +1,11 @@
+{
+  "title": "聊天插件",
+  "description": "增强您的助手",
+  "icon": "Blocks",
+  "root": true,
+  "pages": [
+    "index",
+    "visual-tree",
+    "web-browser"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Chat Plugins",
+  "description": "Enhance Your Assistant",
+  "icon": "Blocks",
+  "root": true,
+  "pages": [
+    "index",
+    "visual-tree",
+    "web-browser"
+  ]
+}

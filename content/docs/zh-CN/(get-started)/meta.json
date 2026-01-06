@@ -1,0 +1,14 @@
+{
+  "title": "快速上手",
+  "description": "配置 & 使用",
+  "icon": "BookOpen",
+  "root": true,
+  "pages": [
+    "index",
+    "installation",
+    "quick-start",
+    "ai-assistant",
+    "shortcuts",
+    "faq"
+  ]
+}

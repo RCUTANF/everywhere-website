@@ -1,0 +1,17 @@
+{
+  "title": "Model Providers",
+  "description": "Choose Your AI Service",
+  "icon": "Sparkles",
+  "root": true,
+  "pages": [
+    "index",
+    "openai",
+    "anthropic",
+    "google",
+    "deepseek",
+    "moonshot",
+    "openrouter",
+    "siliconcloud",
+    "ollama"
+  ]
+}

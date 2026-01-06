@@ -1,0 +1,14 @@
+{
+  "title": "Get Started",
+  "description": "Configure and Use",
+  "icon": "BookOpen",
+  "root": true,
+  "pages": [
+    "index",
+    "installation",
+    "quick-start",
+    "ai-assistant",
+    "shortcuts",
+    "faq"
+  ]
+}

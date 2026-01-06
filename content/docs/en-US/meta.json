@@ -1,29 +1,3 @@
 {
-  "title": "Docs",
-  "description": "Everywhere Docs",
-  "icon": "BookOpen",
-  "root": true,
-  "pages": [
-    "---Get Started---",
-    "./index",
-    "get-started/installation",
-    "get-started/quick-start",
-    "get-started/ai-assistant",
-    "get-started/shortcuts",
-    "get-started/faq",
-    "---Model Providers---",
-    "model-provider/index",
-    "model-provider/openai",
-    "model-provider/anthropic",
-    "model-provider/google",
-    "model-provider/deepseek",
-    "model-provider/moonshot",
-    "model-provider/openrouter",
-    "model-provider/siliconcloud",
-    "model-provider/ollama",
-    "---Chat Plugins---",
-    "chat-plugin/index",
-    "chat-plugin/visual-tree",
-    "chat-plugin/web-browser"
-  ]
+  "pages": ["(get-started)", "model-provider", "chat-plugin"]
 }

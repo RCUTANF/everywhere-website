@@ -1,6 +1,6 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 import Image from 'next/image';
-import { i18n } from './i18n';
+import { i18n, getLocalePath } from './i18n';
 import { GithubIcon } from './icons';
 import type { LinkItemType } from 'fumadocs-ui/layouts/docs';
 
@@ -36,6 +36,7 @@ export function baseOptions(locale: string): BaseLayoutProps {
           </span>
         </>
       ),
+      url: getLocalePath(locale),
     },
     i18n,
   };

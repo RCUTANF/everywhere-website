@@ -1,0 +1,17 @@
+{
+  "title": "模型提供商",
+  "description": "选择您的 AI 服务",
+  "icon": "Sparkles",
+  "root": true,
+  "pages": [
+    "index",
+    "openai",
+    "anthropic",
+    "google",
+    "deepseek",
+    "moonshot",
+    "openrouter",
+    "siliconcloud",
+    "ollama"
+  ]
+}
