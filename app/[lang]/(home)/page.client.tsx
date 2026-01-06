@@ -275,7 +275,7 @@ export function FeatureSection({
           return (
             <div
               key={idx}
-              className={cn(cardVariants(), 'flex flex-col justify-center')}
+              className={cn(cardVariants(), 'flex flex-col justify-center h-full')}
             >
               <div>
                 <div
@@ -314,9 +314,9 @@ export function ModelProviderSection({
 
   return (
     <section className="mx-auto mt-24 max-w-[1400px] px-4 overflow-hidden">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
         {/* Left Card: Title & Desc */}
-        <div className={cn(cardVariants(), 'flex flex-col justify-center')}>
+        <div className={cn(cardVariants(), 'flex flex-col justify-center pr-12')}>
           <h3 className={cn(headingVariants({ variant: 'h3', className: 'mb-3' }))}>{title}</h3>
           <p className="text-muted-foreground text-lg">{description}</p>
           <Link href={getLocalePath(lang, '/docs/model-provider')} className={cn(buttonVariants(), 'justify-start mt-6 w-fit')}>
@@ -400,9 +400,6 @@ export function ModelProviderSection({
         }
         .animate-infinite-scroll {
           animation: infinite-scroll var(--animation-duration) linear infinite;
-        }
-        .hover\\:pause:hover {
-          animation-play-state: paused;
         }
       `}</style>
     </section>
@@ -518,6 +515,47 @@ export function BoundlessSection({
             </div>
           </div>
         ))}
+      </div>
+    </section>
+  );
+}
+
+export function CTASection({
+  title,
+  description,
+  actionText,
+  lang,
+}: {
+  title: string;
+  description: string;
+  actionText: string;
+  lang: string;
+}) {
+  return (
+    <section className="mx-auto mt-24 mb-12 max-w-[1400px] px-4">
+      <div className="relative overflow-hidden rounded-3xl border bg-background/50 px-6 py-16 sm:px-16 md:py-24 text-center">
+        {/* Blurred Gradient Background */}
+        <div
+          className="absolute inset-0 -z-10 opacity-20 dark:opacity-10 blur-3xl saturate-150"
+          style={{
+            backgroundImage:
+              'linear-gradient(to bottom right, var(--color-brand), var(--color-brand-alter-1), var(--color-brand-alter-2))',
+          }}
+        />
+
+        <h2 className={cn(headingVariants({ variant: 'h2' }), 'mb-6 relative z-10')}>
+          {title}
+        </h2>
+        <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10 relative z-10 font-light">
+          {description}
+        </p>
+        <Link
+          href={getLocalePath(lang, 'docs')}
+          className={cn(buttonVariants({ variant: 'primary' }), 'gap-2 px-8 py-4 text-lg shadow-lg relative z-10 items-center')}
+        >
+          {actionText}
+          <ArrowRight className="size-5" />
+        </Link>
       </div>
     </section>
   );

@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { BookOpen, Download, BookText } from 'lucide-react';
-import { GithubIcon } from '@/lib/icons';
-import { Hero, FeatureSection, ModelProviderSection, SponsorsSection, BoundlessSection } from './page.client';
+import { Hero, FeatureSection, ModelProviderSection, SponsorsSection, BoundlessSection, CTASection } from './page.client';
 import { getLocalePath, i18n } from '@/lib/i18n';
 
 const contentMap = {
@@ -23,20 +22,32 @@ const contentMap = {
     ),
     // Features
     features: [
-      { title: 'Context-Aware', desc: 'Intelligently recognizes current screen content, understands app scenarios, and responds instantly.' },
-      { title: 'Multi-Scenario Usage', desc: 'One-click reminders, web summarization, instant translation, and email polishing with rich AI features.' },
-      { title: 'Seamless Integration', desc: 'Works natively with your desktop — invoke via shortcuts and interact without switching apps.' },
-      { title: 'Extensible', desc: 'Built with .NET and Avalonia, supports multiple models and MCP tools.' },
+      { 
+        title: 'Screen Context Awareness', 
+        desc: 'Recognizes on-screen text and UI logic to precisely understand your work context. Get instant assistance based on what you see, eliminating the friction of manual input.' 
+      },
+      { 
+        title: 'Versatile Productivity', 
+        desc: 'From information intake to content output, it covers your entire workflow for work and study, transforming tedious tasks into simple, efficient actions.' 
+      },
+      { 
+        title: 'Seamless Native Integration', 
+        desc: 'Built for native desktop environments. Summon it instantly via global hotkeys to interact over any application, eliminating window switching and blending AI into your natural workflow.' 
+      },
+      { 
+        title: 'Extensible & Powerful', 
+        desc: 'Powered by high-performance .NET and Avalonia. Support for leading AI models and full MCP tool compatibility allows you to customize your own specialized AI workstation.' 
+      },
     ],
     // Model Providers
-    modelProviderTitle: 'Supported Model Providers',
+    modelProviderTitle: 'Model Providers',
     modelProviderDesc: 'Unified access to top-tier models like OpenAI, Claude, Gemini, and more. Switch seamlessly to find the best fit for your needs.',
     modelProviderLearnMoreDesc: 'Configure',
     // Sponsors
     sponsorsTitle: 'Sponsors',
-    sponsorsDesc: 'We are proud to be supported by these forward-thinking organizations building the future of AI with us.',
-    // AI Boundless Applications
-    boundlessTitle: 'AI Boundless Applications',
+    sponsorsDesc: 'A special thank you to the individuals and organizations who believe in our vision. Your trust and support mean the world to us.',
+    // AI Without Boundaries
+    boundlessTitle: 'AI Without Boundaries',
     boundlessDesc: 'Unlock the full potential of artificial intelligence in your daily workflow. From simple automation to complex creative tasks, the possibilities are endless.',
     boundlessItems: [
       { label: 'Scenario 01', title: 'Instant In-Page Summaries', desc: 'Grasp key points, terms, and insights on any page without switching context.', imgName: 'content-summary.webp' },
@@ -44,6 +55,11 @@ const contentMap = {
       { label: 'Scenario 03', title: 'Natural Language System Commands', desc: 'Invoke your system\'s shell, see live output, and handle permission elevations. Manage services, free up ports, clear caches, and run scripts—all with natural language.', imgName: 'terminal-calling.webp' },
       { label: 'Scenario 04', title: 'Instant Error Diagnosis', desc: 'Capture context from error, identify the cause, and get suggested commands and solutions to resolve it.', imgName: 'error-analysis.webp' },
     ],
+    cta: {
+      title: 'Ready to boost your productivity?',
+      desc: 'Experience Everywhere and let AI empower your desktop workflow.',
+      action: 'Get Started',
+    },
   },
   'zh-CN': {
     // Hero
@@ -63,19 +79,19 @@ const contentMap = {
     ),
     // Features
     features: [
-      { title: '屏幕内容感知', desc: '智能识别当前界面内容，自动理解应用场景，随时响应操作。' },
-      { title: '多场景', desc: '一键提醒、网页摘要、即时翻译、邮件润色等丰富 AI 功能。' },
-      { title: '跨平台无缝集成', desc: '跨平台原生桌面环境支持，快捷键唤起，无需切换应用即可交互。' },
-      { title: '可扩展', desc: '基于 .NET 和 Avalonia，支持多种大模型和 MCP 工具。' },
+      { title: '屏幕内容感知', desc: '识别当前屏幕文字与界面逻辑，精准理解你的工作语境。基于当前所见提供即时辅助，免去手动输入压力。' },
+      { title: '多场景生产力', desc: '从信息摄取到内容输出，覆盖你的办公与学习需求，让琐碎任务化繁为简。' },
+      { title: '跨平台无缝集成', desc: '专为原生桌面环境打造，通过全局快捷键瞬间唤出，在任何应用上方直接交互，无需在窗口间频繁切换，让 AI 真正融入你的原生工作流。' },
+      { title: '可扩展', desc: '基于高性能 .NET 与 Avalonia 架构开发。不仅支持自由切换主流大模型，更全面兼容 MCP 工具协议，可随心定制专属的 AI 工作站。' },
     ],
     // Model Providers
     modelProviderTitle: '主流大模型支持',
-    modelProviderDesc: '接入 OpenAI, Claude, Gemini 等顶级模型。无缝切换，为您找到最适合的智能引擎。',
+    modelProviderDesc: '接入 ChatGPT, Claude, Gemini 等模型。以前沿智能，重塑创作体验。',
     modelProviderLearnMoreDesc: '开始配置',
     // Sponsors
     sponsorsTitle: '赞助方',
-    sponsorsDesc: '感谢这些具有远见卓识的组织对我们的支持，共同构建 AI 的未来。',
-    // AI Boundless Applications
+    sponsorsDesc: '鸣谢所有认同本项目理念并给予慷慨支持的个人与机构，感谢你们见证我们的成长。',
+    // AI Without Boundaries
     boundlessTitle: 'AI 无界应用',
     boundlessDesc: '在日常工作流中释放人工智能的无限潜力。从简单的自动化到复杂的创造性任务，一切皆有可能。',
     boundlessItems: [
@@ -84,6 +100,11 @@ const contentMap = {
       { label: '场景 03', title: '自然语言，高效执行系统命令', desc: '调用系统 Shell，实时展示输出，处理权限提升。用自然语言管理服务、释放端口、清理缓存、运行脚本等。', imgName: 'terminal-calling.webp' },
       { label: '场景 04', title: '即时错误诊断与分析', desc: '捕获错误，定位原因，提供修复建议、备用方案和参考资料。', imgName: 'error-analysis.webp' },
     ],
+    cta: {
+      title: '准备好提升效率了吗？',
+      desc: '立即体验 Everywhere，让 AI 助力您的桌面工作。',
+      action: '快速开始',
+    },
   },
 };
 
@@ -211,6 +232,8 @@ export default async function Page({
         <SponsorsSection title={content.sponsorsTitle} description={content.sponsorsDesc} sponsors={orgSponsors} />
     
         <BoundlessSection title={content.boundlessTitle} description={content.boundlessDesc} items={content.boundlessItems} lang={lang} />
+
+        <CTASection title={content.cta.title} description={content.cta.desc} actionText={content.cta.action} lang={lang} />
       </div>      
     </main>
   );
