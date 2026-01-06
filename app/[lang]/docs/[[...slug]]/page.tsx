@@ -7,10 +7,12 @@ import {
   PageLastUpdate
 } from 'fumadocs-ui/page';
 import { notFound } from 'next/navigation';
+import { Feedback } from '@/components/feedback';
 import { getMDXComponents } from '@/mdx-components';
 import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { LLMCopyButton, ViewOptions } from '@/components/page-actions';
+import { onRateAction } from '@/lib/github';
 
 const owner = 'Sylinko';
 const repo = 'everywhere-docs';
@@ -57,7 +59,9 @@ export default async function Page(props: {
           })}
         />
       </DocsBody>
-      
+
+      <Feedback lang={lang} onRateAction={onRateAction} />
+
       {lastModifiedTime && <PageLastUpdate date={lastModifiedTime} />}
     </DocsPage>
   );
