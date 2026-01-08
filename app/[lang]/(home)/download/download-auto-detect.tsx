@@ -5,7 +5,7 @@ import { Download } from 'lucide-react';
 import { buttonVariants } from '@/components/variants';
 import { cn } from '@/lib/cn';
 import Link from 'next/link';
-import { WindowsIcon, AppleIcon, LinuxIcon } from '@/lib/icons';
+import { WindowsIcon, AppleIcon, LinuxIcon } from '@/components/icons';
 
 interface OSInfo {
   id: 'windows' | 'macos' | 'linux' | 'unknown';

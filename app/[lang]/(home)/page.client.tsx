@@ -521,6 +521,11 @@ export function BoundlessSection({
               <p className="text-muted-foreground text-md leading-relaxed">
                 {item.desc}
               </p>
+              {item.warn && (
+                <p className="text-sm font-medium">
+                  {item.warn}
+                </p>
+              )}
             </div>
 
             {/* Image Side - Placeholder */}

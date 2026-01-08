@@ -6,7 +6,7 @@ import { i18n } from '@/lib/i18n';
 import type { Metadata } from 'next';
 import { DownloadAutoDetect } from './download-auto-detect';
 import { DynamicLink } from 'fumadocs-core/dynamic-link';
-import { WindowsIcon, AppleIcon, LinuxIcon, GithubIcon } from '@/lib/icons';
+import { WindowsIcon, AppleIcon, LinuxIcon, GithubIcon } from '@/components/icons';
 
 const DOWNLOAD_LINKS = {
   windows: {

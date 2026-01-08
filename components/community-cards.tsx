@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { cn } from '@/lib/cn'; // Assuming cn utility exists here
 import { cardVariants } from './variants';
-import { GithubIcon } from '@/lib/icons';
+import { GithubIcon } from '@/components/icons';
 import { Heart } from 'lucide-react';
 
 // --- Types ---

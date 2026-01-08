@@ -1,6 +1,6 @@
 import { policySource } from '@/lib/source';
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
-import { baseOptions, linkItems } from '@/lib/layout.shared';
+import { baseOptions, linkItems } from '@/components/layout.shared';
 import { notFound } from 'next/navigation';
 import { i18n } from '@/lib/i18n';
 
