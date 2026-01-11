@@ -95,7 +95,10 @@ const contentMap = {
       title: 'Windows',
       desc: '需要 Windows 10 (19041) 或更高版本。',
       action: '下载',
-      distros: [{ name: '标准安装包', note: '.exe', key: 'installer' }],
+      distros: [
+        { name: '便携版', note: '.zip', key: 'portable' },
+        { name: '安装包', note: '.exe', key: 'installer' }
+      ],
     },
     macos: {
       title: 'macOS',
