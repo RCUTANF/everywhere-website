@@ -1,0 +1,63 @@
+import { policySource } from '@/lib/source';
+import { notFound } from 'next/navigation';
+import { getMDXComponents } from '@/mdx-components';
+import { createMetadata } from '@/lib/metadata';
+import { createRelativeLink } from 'fumadocs-ui/mdx';
+import {
+  DocsBody,
+  DocsDescription,
+  DocsPage,
+  DocsTitle,
+  PageLastUpdate,
+} from 'fumadocs-ui/page';
+
+export default async function Page(props: {
+  params: Promise<{ lang: string; slug?: string[] }>;
+}) {
+  const { lang, slug } = await props.params;
+  const page = policySource.getPage(slug, lang);
+  if (!page) notFound();
+
+  const MDX = page.data.body;
+  const lastModifiedTime = page.data.lastModified;
+
+  return (
+    <DocsPage
+      toc={page.data.toc}
+      full={page.data.full}
+      tableOfContent={{
+        style: 'clerk',
+        enabled: !page.data.full,
+      }}
+    >
+      <DocsTitle>{page.data.title}</DocsTitle>
+      <DocsDescription>{page.data.description}</DocsDescription>
+      <DocsBody>
+        <MDX
+          components={getMDXComponents({
+            a: createRelativeLink(policySource, page),
+          })}
+        />
+      </DocsBody>
+
+      {lastModifiedTime && <PageLastUpdate date={lastModifiedTime} />}
+    </DocsPage>
+  );
+}
+
+export async function generateMetadata(props: {
+  params: Promise<{ lang: string; slug?: string[] }>;
+}) {
+  const { lang, slug } = await props.params;
+  const page = policySource.getPage(slug, lang);
+  if (!page) notFound();
+
+  return createMetadata({
+    title: page.data.title,
+    description: page.data.description,
+  });
+}
+
+export function generateStaticParams() {
+  return policySource.generateParams();
+}

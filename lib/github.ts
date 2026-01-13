@@ -1,7 +1,12 @@
 import { App, Octokit } from 'octokit';
 import type { ActionResponse, Feedback } from '@/components/feedback';
 
-// GitHub repository info
+// Everywhere GitHub repository url
+export const RepoUrl = "https://github.com/DearVa/Everywhere";
+export const LicenseRepoUrl = "https://github.com/DearVa/Everywhere/blob/main/LICENSE";
+export const CodeOfConductRepoUrl = "https://github.com/DearVa/Everywhere/blob/main/.github/CODE_OF_CONDUCT.md";
+
+// Docs GitHub repository info
 export const owner = 'Sylinko';
 export const repo = 'everywhere-docs';
 export const DocsCategory = 'Feedback'; // GitHub Discussion
