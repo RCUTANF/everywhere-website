@@ -5,6 +5,7 @@ import { cn } from '@/lib/cn';
 import { i18n } from '@/lib/i18n';
 import type { Metadata } from 'next';
 import { DownloadAutoDetect } from './download-auto-detect';
+import { DownloadLinks } from '@/lib/constants';
 import { DynamicLink } from 'fumadocs-core/dynamic-link';
 import {
   WindowsIcon,
@@ -12,24 +13,6 @@ import {
   LinuxIcon,
   GithubIcon,
 } from '@/components/common/icons';
-
-const DOWNLOAD_LINKS = {
-  windows: {
-    installer:
-      'https://ghproxy.sylinko.com/download?product=everywhere&os=win-x64&type=setup&version=latest',
-    portable:
-      'https://ghproxy.sylinko.com/download?product=everywhere&os=win-x64&type=zip&version=latest',
-  },
-  macos: {
-    silicon: '',
-    intel: '',
-  },
-  linux: {
-    deb: '',
-    rpm: '',
-    aur: '',
-  },
-} as const;
 
 const contentMap = {
   'en-US': {
@@ -44,7 +27,12 @@ const contentMap = {
     autoDetect: {
       downloadFor: 'Download for {os}',
       loading: 'Detecting your system...',
-      otherVersions: 'View other versions',
+      otherVersions: 'Other versions',
+      variants: {
+        windows: { installer: 'Installer', portable: 'Portable' },
+        macos: { silicon: 'Apple Silicon (M Series)', intel: 'Intel (x64)' },
+        linux: { deb: 'Debian / Ubuntu', rpm: 'Fedora / RedHat', aur: 'Arch Linux' },
+      },
     },
     comingSoon: 'Coming Soon',
     windows: {
@@ -93,7 +81,12 @@ const contentMap = {
     autoDetect: {
       downloadFor: '下载 {os} 版本',
       loading: '正在检测您的系统...',
-      otherVersions: '查看其他版本',
+      otherVersions: '其他版本',
+      variants: {
+        windows: { installer: '安装包', portable: '便携版' },
+        macos: { silicon: 'Apple Silicon (M 系列)', intel: 'Intel (x64)' },
+        linux: { deb: 'Debian / Ubuntu', rpm: 'Fedora / RedHat', aur: 'Arch Linux' },
+      },
     },
     comingSoon: '敬请期待',
     windows: {
@@ -101,8 +94,8 @@ const contentMap = {
       desc: '需要 Windows 10 (19041) 或更高版本。',
       action: '下载',
       distros: [
+        { name: '安装包', note: '.msi', key: 'installer' },
         { name: '便携版', note: '.zip', key: 'portable' },
-        { name: '安装包', note: '.exe', key: 'installer' },
       ],
     },
     macos: {
@@ -170,7 +163,7 @@ export default async function Page({
       name: 'macOS',
       data: content.macos,
       link: 'https://github.com/DearVa/Everywhere/releases',
-      comingSoon: true,
+      comingSoon: false,
     },
     {
       id: 'linux',
@@ -183,7 +176,7 @@ export default async function Page({
   ];
 
   return (
-    <main className="text-landing-foreground dark:text-landing-foreground-dark min-h-[calc(100vh-4rem)] pt-24 pb-16">
+    <main className="text-landing-foreground dark:text-landing-foreground-dark min-h-[calc(100vh-4rem)] pt-24">
       <div className="mx-auto max-w-[1200px] px-6">
         {/* Hero Section */}
         <div className="mb-24 flex flex-col items-center text-center">
@@ -252,8 +245,8 @@ export default async function Page({
                   )}
                 >
                   {platform.data.distros.map((distro, i) => {
-                    const platformLinks = DOWNLOAD_LINKS[
-                      platform.id as keyof typeof DOWNLOAD_LINKS
+                    const platformLinks = DownloadLinks[
+                      platform.id as keyof typeof DownloadLinks
                     ] as Record<string, string>;
                     const href =
                       platformLinks[distro.key as keyof typeof platformLinks] ||
