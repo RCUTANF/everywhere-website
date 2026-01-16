@@ -92,10 +92,6 @@ const policyLinks: {
     href: '/policies/terms',
   },
   {
-    key: 'refundPolicy',
-    href: '/policies/refund',
-  },
-  {
     key: 'contributorLicenseAgreement',
     href: 'https://github.com/DearVa/Everywhere/blob/main/CLA.md',
     external: true,
@@ -120,7 +116,6 @@ interface FooterTranslation {
       title: string;
       privacyPolicy: string;
       termsOfService: string;
-      refundPolicy: string;
       contributorLicenseAgreement: string;
     };
     aboutSylinko: {
@@ -159,7 +154,6 @@ const translations: Record<string, FooterTranslation> = {
         title: 'Legal & Policies',
         privacyPolicy: 'Privacy Policy',
         termsOfService: 'Terms of Service',
-        refundPolicy: 'Refund Policy',
         contributorLicenseAgreement: 'Contributor License Agreement',
       },
       aboutSylinko: {
@@ -196,7 +190,6 @@ const translations: Record<string, FooterTranslation> = {
         title: '法律与政策',
         privacyPolicy: '隐私政策',
         termsOfService: '服务条款',
-        refundPolicy: '退款政策',
         contributorLicenseAgreement: '贡献者许可协议',
       },
       aboutSylinko: {
