@@ -16,7 +16,7 @@ import { onRateAction } from '@/lib/github';
 
 const owner = 'Sylinko';
 const repo = 'everywhere-docs';
-const branch = 'main';
+const branch = 'master';
 
 export default async function Page(props: {
   params: Promise<{ lang: string; slug?: string[] }>;

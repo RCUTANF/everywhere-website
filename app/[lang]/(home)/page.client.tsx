@@ -330,17 +330,7 @@ export function ModelProviderSection({
                       rel="noopener noreferrer"
                     >
                       <div className="bg-card flex shrink-0 items-center justify-center gap-2 rounded-xl border px-4 py-2 shadow-sm">
-                        {/* <Image
-                          src={model.iconUrl}
-                          alt={model.title}
-                          width={16}
-                          height={16}
-                          className={cn(
-                            'size-5',
-                            model.inversedIconColor && 'dark:invert dark:filter'
-                          )}
-                        /> */}
-                        {model.icon}
+                        <>{model.icon}</>
                         <span className="text-card-foreground text-sm font-medium">
                           {model.title}
                         </span>
@@ -398,20 +388,19 @@ export function SponsorsSection({
               rel="noopener noreferrer"
               className="bg-card flex items-center justify-center rounded-xl border transition-shadow hover:shadow-md"
             >
-              {sponsor.themeDifferentiated ? (
+              <div className="relative w-[200px] h-[100px]">
+                {sponsor.themeDifferentiated ? (
                 <>
                   <Image
                     src={`${sponsor.iconPath}-light.svg`}
                     alt={sponsor.title}
-                    width={150 * (sponsor.scale || 1)}
-                    height={75 * (sponsor.scale || 1)}
+                    fill
                     className="object-contain dark:hidden"
                   />
                   <Image
                     src={`${sponsor.iconPath}-dark.svg`}
                     alt={sponsor.title}
-                    width={150 * (sponsor.scale || 1)}
-                    height={75 * (sponsor.scale || 1)}
+                    fill
                     className="hidden object-contain dark:block"
                   />
                 </>
@@ -419,11 +408,12 @@ export function SponsorsSection({
                 <Image
                   src={`${sponsor.iconPath}.svg`}
                   alt={sponsor.title}
-                  width={150 * (sponsor.scale || 1)}
-                  height={75 * (sponsor.scale || 1)}
+                  fill
                   className="sponsor-img auto-gray object-contain"
                 />
               )}
+              </div>
+              
             </Link>
           ))}
         </div>

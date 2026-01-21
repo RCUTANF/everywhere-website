@@ -14,15 +14,10 @@
       "service": "everywhere-website",
     },
   ],
-  // "r2_buckets": [
-  // 	{
-  // 		"binding": "NEXT_INC_CACHE_R2_BUCKET",
-  // 		"bucket_name": "everywhere-website-cache",
-  // 	},
-  // ],
-  //   "images": {
-  //     // Enable image optimization
-  //     // see https://opennext.js.org/cloudflare/howtos/image
-  //     "binding": "IMAGES",
-  //   },
+  "r2_buckets": [
+  	{
+  		"binding": "NEXT_INC_CACHE_R2_BUCKET",
+  		"bucket_name": "everywhere-website-cache",
+  	},
+  ],
 }
