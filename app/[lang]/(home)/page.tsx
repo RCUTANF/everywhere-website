@@ -46,7 +46,7 @@ const contentMap = {
       },
       {
         title: 'Seamless Native Integration',
-        desc: 'Built for native desktop environments. Summon it instantly via global hotkeys to interact over any application, eliminating window switching and blending AI into your natural workflow.',
+        desc: 'Built for native desktop environments. Bring it up instantly via global hotkeys to interact over any application, eliminating window switching and blending AI into your natural workflow.',
       },
       {
         title: 'Extensible & Powerful',
