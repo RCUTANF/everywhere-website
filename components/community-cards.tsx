@@ -263,7 +263,7 @@ export const SponsorList: React.FC = () => {
   useEffect(() => {
     const fetchSponsors = async () => {
       try {
-        const response = await fetch('https://sponsor-api.sylinko.com/');
+        const response = await fetch('/api/sponsors');
         if (!response.ok) throw new Error('Failed to fetch');
         const data: SponsorResponse = await response.json();
 

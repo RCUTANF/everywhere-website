@@ -8,6 +8,20 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS",
   },
+  "placement": {
+    "mode": "smart"
+  },
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 0.1,
+      "invocation_logs": true
+    },
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 0.1
+    }
+  },
   "services": [
     {
       "binding": "WORKER_SELF_REFERENCE",
