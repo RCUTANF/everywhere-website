@@ -39,6 +39,7 @@ export function DownloadAutoDetect({
 }) {
   const [os, setOs] = useState<OSInfo | null>(null);
   const [showVariants, setShowVariants] = useState(false);
+  const [isDetecting, setIsDetecting] = useState(true);
 
   useEffect(() => {
     const t = setTimeout(() => {
@@ -65,7 +66,6 @@ export function DownloadAutoDetect({
           ],
         });
       } else if (userAgent.indexOf('mac') !== -1) {
-        // 默认推荐 Apple Silicon，因为大多数新 Mac 都是 M 系列芯片
         setOs({
           id: 'macos',
           name: 'macOS',
@@ -85,7 +85,7 @@ export function DownloadAutoDetect({
             },
           ],
         });
-      } else if (
+      } /* else if (
         userAgent.indexOf('linux') !== -1 ||
         userAgent.indexOf('x11') !== -1
       ) {
@@ -115,21 +115,24 @@ export function DownloadAutoDetect({
             },
           ],
         });
-      }
+      } */
+      setIsDetecting(false);
     }, 0);
 
     return () => clearTimeout(t);
   }, [dictionary.variants]);
 
-  if (!os) {
-    return (
-      <div className="flex h-24 items-center justify-center">
-        <span className="text-muted-foreground animate-pulse">
-          {dictionary.loading}
-        </span>
-      </div>
-    );
-  }
+  if (isDetecting) {
+      return (
+        <div className="flex h-24 items-center justify-center">
+          <span className="text-muted-foreground animate-pulse">
+            {dictionary.loading}
+          </span>
+        </div>
+      );
+    }
+
+  if (!os) return null;
 
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 flex flex-col items-center gap-4 duration-700">

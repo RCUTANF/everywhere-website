@@ -88,7 +88,7 @@ const contentMap = {
       otherVersions: '其他版本',
       variants: {
         windows: { installer: '安装包', portable: '便携版' },
-        macos: { silicon: 'Apple Silicon (M 系列)', intel: 'Intel (x64)' },
+        macos: { silicon: 'Apple Silicon (M 系列芯片)', intel: 'Intel (x64)' },
         linux: {
           deb: 'Debian / Ubuntu',
           rpm: 'Fedora / RedHat',
