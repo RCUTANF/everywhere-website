@@ -3,5 +3,11 @@
   "description": "Enhance Your Assistant",
   "icon": "Blocks",
   "root": true,
-  "pages": ["index", "visual-context", "web-browser"]
+  "pages": [
+    "index", 
+    "essential",
+    "visual-context", 
+    "web-browser",
+    "file-system"
+  ]
 }

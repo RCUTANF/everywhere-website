@@ -1,0 +1,71 @@
+---
+title: File System
+description: Provides file system access capabilities for Everywhere.
+icon: FileBox
+---
+
+import { Table } from "@/components/common/table"
+import { PermissionBadge } from '@/components/common/permissions';
+
+<Callout type="error" title="Security">
+File operations performed by the assistant are **irreversible**. Please ensure you have backed up important data before allowing modifications.
+</Callout>
+
+## Features
+
+<Table columnWidths={['20%', '65%', '15%']}>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Description</th>
+      <th>Permission</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Search Files</td>
+      <td>Search for files or directories in a specified path matching the given pattern.</td>
+      <td><PermissionBadge risk="low">Read File</PermissionBadge></td>
+    </tr>
+    <tr>
+      <td>Get File Info</td>
+      <td>Get information about a file or directory at the specified path.</td>
+      <td><PermissionBadge risk="low">Read File</PermissionBadge></td>
+    </tr>
+    <tr>
+      <td>Search File Content</td>
+      <td>Search for a specific text within file(s) and return matching lines.</td>
+      <td><PermissionBadge risk="low">Read File</PermissionBadge></td>
+    </tr>
+    <tr>
+      <td>Read File</td>
+      <td>Read the content of a file at the specified path.</td>
+      <td><PermissionBadge risk="low">Read File</PermissionBadge></td>
+    </tr>
+    <tr>
+      <td>Move or Rename File</td>
+      <td>Move or rename a file or directory.</td>
+      <td><PermissionBadge risk="medium">Access File</PermissionBadge></td>
+    </tr>
+    <tr>
+      <td>Delete File(s)</td>
+      <td>Delete files or directories at the specified path.</td>
+      <td><PermissionBadge risk="medium">Access File</PermissionBadge></td>
+    </tr>
+    <tr>
+      <td>Create Directory</td>
+      <td>Create a new directory at the specified path.</td>
+      <td><PermissionBadge risk="medium">Access File</PermissionBadge></td>
+    </tr>
+    <tr>
+      <td>Write to File</td>
+      <td>Write content to a text file at the specified path.</td>
+      <td><PermissionBadge risk="medium">Access File</PermissionBadge></td>
+    </tr>
+    <tr>
+      <td>Edit File Content</td>
+      <td>Replace content in a text file.</td>
+      <td><PermissionBadge risk="medium">Access File</PermissionBadge></td>
+    </tr>
+  </tbody>
+</Table>
